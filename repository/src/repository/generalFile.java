@@ -13,17 +13,19 @@ import java.io.PrintWriter;
  *
  * @author Administrator
  */
-public class cmd implements tipoFile {
+public class generalFile {
     public String author;
     public String data;
     public String fileName;
     public String Path;
+    public String Estensione;
     
-    public cmd(String author, String data, String fileName) throws IOException{
+    public generalFile(String author, String data, String fileName, String estensione) throws IOException{
         this.author=author;
         this.data=data;
-        this.fileName=fileName+".cmd";
-        this.Path="F:/3^IC/INFORMATICA/JAVA/repository/src/contenitore/"+fileName+".cmd";
+        this.fileName=fileName;
+        this.Estensione=estensione;
+        this.Path="F:/3^IC/INFORMATICA/JAVA/repository/src/contenitore/"+fileName+""+Estensione;
         File file=new File(Path);
         if(file.exists()){
                 System.out.println("questo file esiste già");
@@ -34,30 +36,5 @@ public class cmd implements tipoFile {
         scrivi.println("autore: "+author);
         scrivi.println("data: "+data);
         scrivi.close();
-    }
-    
-    @Override
-    public void rinomina(String newFile) {
-       fileName=newFile+".cmd"; 
-    }
-
-    @Override
-    public String getName() {
-       return fileName;
-    }
-
-    @Override
-    public String getData() {
-       return data;
-    }
-
-    @Override
-    public String getAuthor() {
-        return author;
-    }
-
-    @Override
-    public void creaFile() {
-        
     }
 }

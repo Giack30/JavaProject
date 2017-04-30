@@ -16,4 +16,5 @@ public interface tipoFile {
     String getName();
     String getData();
     String getAuthor();
+    void creaFile();
 }
